@@ -287,6 +287,9 @@ globalkeys = gears.table.join(
     awful.key({ modkey, }, "F9", function () awful.spawn("emacsclient -c -a 'emacs'") end),
     awful.key({ modkey, }, "F10", function () awful.spawn("firefox") end),
     awful.key({ modkey, }, "F11", function () awful.spawn("dolphin") end),
+
+    awful.key({ modkey, "Shift" }, "x", function () awful.spawn("xlock -mode fadeplot") end),
+   	
    
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,

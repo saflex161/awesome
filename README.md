@@ -2,7 +2,7 @@
 
 # Dependencies:
 - firefox
-- dolphin
+- thunar
 - emacs
 - vim
 - rofi

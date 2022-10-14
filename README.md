@@ -9,3 +9,4 @@
 - picom
 - nitrogen
 - thunderbird (flatpak)
+- xlock

@@ -107,7 +107,8 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 
 trenner_klein = wibox.widget.textbox()
 trenner_klein.text ="  "
- 
+
+
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 
@@ -165,8 +166,8 @@ local tasklist_buttons = gears.table.join(
 
 awful.screen.connect_for_each_screen(function(s)    					  
     -- Each screen has its own tag table.
-   -- awful.tag({ "1", "2", "3", "4", "5" }, s, awful.layout.layouts[1])
-    local names = {"term", "www", "files", "mail", "dev"} 
+   -- awful.tag({ "1", "2", "3", "4", "5", "6" }, s, awful.layout.layouts[1])
+    local names = {"term", "www", "files", "mail", "dev", "game"} 
     awful.tag(names, s, awful.layout.layouts[1])
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -200,13 +201,14 @@ awful.screen.connect_for_each_screen(function(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            trenner_klein,
-	    -- mylauncher,
-	  
+	   -- layout = wibox.layout.align.left,  
+	   -- mylauncher,
             s.mytaglist,
             s.mypromptbox,
         },
-        s.mytasklist, -- Middle widget
+           -- Middle Widgets
+             -- s.mytasklist,
+	    nil,
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             

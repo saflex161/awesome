@@ -51,7 +51,8 @@ beautiful.init("/home/julian/.config/awesome/themes/mytheme/theme.lua")
 terminal = "alacritty"
 editor = os.getenv("EDITOR") or "emacsclient -c -a 'emacs'"
 editor_cmd = "vim"
-filemanager = "dolphin"
+filemanager = "thunar"
+browser = "firefox"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -284,13 +285,14 @@ globalkeys = gears.table.join(
 --##########  Eigene Keybindings ###########
 --##########################################
 
-    awful.key({ modkey, }, "F9", function () awful.spawn("emacsclient -c -a 'emacs'") end),
-    awful.key({ modkey, }, "F10", function () awful.spawn("firefox") end),
-    awful.key({ modkey, }, "F11", function () awful.spawn("dolphin") end),
-
-    awful.key({ modkey, "Shift" }, "x", function () awful.spawn("xlock -mode fadeplot") end),
-   	
+    awful.key({ modkey, }, "F9", function () awful.spawn("emacsclient -c -a 'emacs'")  end),
+    awful.key({ modkey, }, "F10", function () awful.spawn(browser) end),
+    awful.key({ modkey, }, "F11", function () awful.spawn(filemanager) end),
    
+    awful.key({ modkey, "Shift" }, "x", function ()awful.spawn("xlock -mode fadeplot") end),
+   
+
+
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
